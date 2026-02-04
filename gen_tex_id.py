@@ -2,6 +2,8 @@ import glob
 import os
 
 
+TEXTURE_PATTERN = 'assets/textures/*.png'
+
 FILE_PATH = 'game/engine/tex_id.odin'
 FILE_PACKAGE = 'engine'
 
@@ -14,7 +16,6 @@ def _to_ada_case(s: str) -> str:
 
 
 if __name__ == '__main__':
-    pattern = 'assets/textures/*.png'
     with open(FILE_PATH, 'w+t') as file:
         if file is None:
             print('Failed to open file at path ', FILE_PATH)
@@ -22,9 +23,9 @@ if __name__ == '__main__':
         file.write(f'package {FILE_PACKAGE}\n\n{ENUM_NAME} :: enum\n')
         file.write('{')
 
-        matches = glob.glob(pattern)
+        matches = glob.glob(TEXTURE_PATTERN)
         if matches is None:
-            print(f'Failed to find matches at {pattern}')
+            print(f'Failed to find matches at {TEXTURE_PATTERN}')
             exit(1)
         for i, m in enumerate(matches):
             name = os.path.basename(m).removesuffix('.png')
