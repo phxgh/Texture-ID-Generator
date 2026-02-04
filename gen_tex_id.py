@@ -20,16 +20,16 @@ if __name__ == '__main__':
         if file is None:
             print('Failed to open file at path ', FILE_PATH)
             exit(1)
-        file.write(f'package {FILE_PACKAGE}\n\n{ENUM_NAME} :: enum\n')
+        file.write(f'package {FILE_PACKAGE}\n\n{ENUM_NAME} :: enum ')
         file.write('{')
 
         matches = glob.glob(TEXTURE_PATTERN)
         if matches is None:
             print(f'Failed to find matches at {TEXTURE_PATTERN}')
             exit(1)
-        for i, m in enumerate(matches):
+        for m in matches:
             name = os.path.basename(m).removesuffix('.png')
-            file.write(f'\n\t{_to_ada_case(name)} = 0x{i},')
+            file.write(f'\n\t{_to_ada_case(name)},')
 
         file.write('\n}')
     print('Generated Texture IDs!')
