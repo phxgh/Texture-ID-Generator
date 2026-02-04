@@ -4,7 +4,7 @@ import os
 
 TEXTURE_PATTERN = 'assets/textures/*.png'
 
-FILE_PATH = 'game/engine/tex_id.odin'
+FILE_PATH = 'source/engine/tex_id.odin'
 FILE_PACKAGE = 'engine'
 
 ENUM_NAME = 'Tex_ID'
