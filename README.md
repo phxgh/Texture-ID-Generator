@@ -1,5 +1,5 @@
 # Texture ID Generator
-This is a simple script that I use to generate my texture IDs within my odin projects. Generally, I add this into my build/run scripts whenever I'm editing a project, usually with the line<br>
+This is a simple script that I use to generate my texture IDs within my Odin projects. Generally, I add this into my build/run scripts whenever I'm editing a project, usually with the line<br>
 `py gen_tex_id.py` on Windows, and<br>
 `python3 gen_tex_id.py` on macOS/Linux.<br><br>
 These should come before you build your actual project that way the IDs are generated properly!
